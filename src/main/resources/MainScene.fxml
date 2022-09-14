@@ -34,7 +34,7 @@
                       <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                      <children>
-                        <Button fx:id="answerButton3" mnemonicParsing="false" onMouseClicked="#answerButton3MouseClicked" text="Мне повезет" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" onMouseClicked="#answerButton3MouseClicked" text="Мне повезет" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <HBox alignment="CENTER" GridPane.columnIndex="1">
                            <children>
                               <TextField fx:id="rTextField3" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
@@ -69,7 +69,7 @@
                               <Label text="Q:" GridPane.halignment="RIGHT" />
                               <HBox alignment="CENTER" GridPane.columnIndex="1">
                                  <children>
-                                    <TextField fx:id="qTextField3" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                                    <TextField fx:id="qTextField3" editable="false" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
                                     <ComboBox fx:id="qFactorComboBox3" maxWidth="1.7976931348623157E308" prefWidth="200.0" />
                                  </children>
                               </HBox>
@@ -115,7 +115,7 @@
                            </children>
                         </HBox>
                         <Label fx:id="rErrorLabel4" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                        <Button fx:id="answerButton4" mnemonicParsing="false" onMouseClicked="#answerButton4MouseClicked" text="Мне повезет" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" onMouseClicked="#answerButton4MouseClicked" text="Мне повезет" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                      </children>
                   </GridPane>
                   <VBox alignment="CENTER">
@@ -134,7 +134,7 @@
                               <Label text="E:" />
                               <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                                  <children>
-                                    <TextField fx:id="eTextField4" prefWidth="300.0" />
+                                    <TextField fx:id="eTextField4" editable="false" prefWidth="300.0" />
                                     <ComboBox fx:id="eFactorComboBox4" prefWidth="200.0" />
                                  </children>
                               </HBox>

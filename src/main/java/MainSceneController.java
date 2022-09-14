@@ -1,7 +1,6 @@
 import javafx.fxml.FXML;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -20,7 +19,6 @@ public class MainSceneController {
     @FXML private TextField aTextField3;
     @FXML private ComboBox<Number> aFactorComboBox3;
     @FXML private Label aErrorLabel3;
-    @FXML private Button answerButton3;
     @FXML private TextField qTextField3;
     @FXML private ComboBox<Charge> qFactorComboBox3;
 
@@ -31,7 +29,6 @@ public class MainSceneController {
     @FXML private TextField rTextField4;
     @FXML private ComboBox<Length> rFactorComboBox4;
     @FXML private Label rErrorLabel4;
-    @FXML private Button answerButton4;
     @FXML private TextField eTextField4;
     @FXML private ComboBox<ElectricField> eFactorComboBox4;
 
@@ -93,6 +90,8 @@ public class MainSceneController {
                 return null;
             }
         });
+        aFactorComboBox3.valueProperty().addListener((obs, o, n) -> submit3());
+
         rFactorComboBox3.getItems().setAll(Length.values());
         rFactorComboBox3.setConverter(new StringConverter<Length>() {
             @Override
@@ -105,6 +104,8 @@ public class MainSceneController {
                 return null;
             }
         });
+        rFactorComboBox3.valueProperty().addListener((obs, o, n) -> submit3());
+
         qFactorComboBox3.getItems().setAll(Charge.values());
         qFactorComboBox3.setConverter(new StringConverter<Charge>() {
             @Override
@@ -118,6 +119,8 @@ public class MainSceneController {
             }
         });
         qFactorComboBox3.getSelectionModel().select(0);
+        qFactorComboBox3.valueProperty().addListener((obs, o, n) -> submit3());
+
 
         lambdaFactorComboBox4.getItems().setAll(LinearChargeDensity.values());
         lambdaFactorComboBox4.setConverter(new StringConverter<LinearChargeDensity>() {
@@ -131,6 +134,8 @@ public class MainSceneController {
                 return null;
             }
         });
+        lambdaFactorComboBox4.valueProperty().addListener((obs, o, n) -> submit4());
+
         rFactorComboBox4.getItems().setAll(Length.values());
         rFactorComboBox4.setConverter(new StringConverter<Length>() {
             @Override
@@ -143,6 +148,8 @@ public class MainSceneController {
                 return null;
             }
         });
+        rFactorComboBox4.valueProperty().addListener((obs, o, n) -> submit4());
+
         eFactorComboBox4.getItems().setAll(ElectricField.values());
         eFactorComboBox4.setConverter(new StringConverter<ElectricField>() {
             @Override
@@ -156,6 +163,16 @@ public class MainSceneController {
             }
         });
         eFactorComboBox4.getSelectionModel().select(0);
+        eFactorComboBox4.valueProperty().addListener((obs, o, n) -> submit4());
+
+
+        rTextField3.textProperty().addListener((obs, o, n) -> submit3());
+        aTextField3.textProperty().addListener((obs, o, n) -> submit3());
+        qTextField3.textProperty().addListener((obs, o, n) -> submit3());
+
+        rTextField4.textProperty().addListener((obs, o, n) -> submit4());
+        lambdaTextField4.textProperty().addListener((obs, o, n) -> submit4());
+        eTextField4.textProperty().addListener((obs, o, n) -> submit4());
     }
 
 
