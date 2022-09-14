@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<TabPane prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainSceneController">
+   <tabs>
+      <Tab closable="false" text="Задача 7">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Canvas fx:id="canvas3" height="200.0" width="200.0" />
+                  <TextArea editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefRowCount="3" text="Имеется аксиально-симметричное электрическое поле, напряженность которого &#10;зависит от расстояния r до его оси как E=a/r , где a — постоянная. &#10;Найти заряд внутри сферы радиуса R с центром на оси этого поля" />
+                  <GridPane hgap="10.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button fx:id="answerButton3" mnemonicParsing="false" onMouseClicked="#answerButton3MouseClicked" text="Мне повезет" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <HBox alignment="CENTER" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="rTextField3" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                              <ComboBox fx:id="rFactorComboBox3" maxWidth="1.7976931348623157E308" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="aTextField3" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                              <ComboBox fx:id="aFactorComboBox3" maxWidth="1.7976931348623157E308" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <Label text="R:" GridPane.halignment="RIGHT" />
+                        <Label text="a:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                        <Label fx:id="rErrorLabel3" textFill="RED" GridPane.columnIndex="2" />
+                        <Label fx:id="aErrorLabel3" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                     </children>
+                  </GridPane>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label text="Ответ" />
+                        <GridPane hgap="10.0" vgap="5.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="Q:" GridPane.halignment="RIGHT" />
+                              <HBox alignment="CENTER" GridPane.columnIndex="1">
+                                 <children>
+                                    <TextField fx:id="qTextField3" maxWidth="1.7976931348623157E308" prefWidth="300.0" />
+                                    <ComboBox fx:id="qFactorComboBox3" maxWidth="1.7976931348623157E308" prefWidth="200.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+      <Tab closable="false" text="Задача 4">
+         <content>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="20.0">
+               <children>
+                  <Canvas fx:id="canvas4" height="200.0" width="200.0" />
+                  <TextArea editable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefRowCount="3" text="Найти напряженность поля равномерно заряженной нити &#10;в виде четверти кольца в точке центра его кривизны. &#10;Линейная плотность заряда нити λ. Радиус R." />
+                  <GridPane hgap="10.0" vgap="5.0">
+                    <columnConstraints>
+                      <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="λ:" />
+                        <HBox alignment="CENTER" GridPane.columnIndex="1">
+                           <children>
+                              <TextField fx:id="lambdaTextField4" prefWidth="300.0" />
+                              <ComboBox fx:id="lambdaFactorComboBox4" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="lambdaErrorLabel4" textFill="RED" GridPane.columnIndex="2" />
+                        <Label text="R:" GridPane.rowIndex="1" />
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <children>
+                              <TextField fx:id="rTextField4" prefWidth="300.0" />
+                              <ComboBox fx:id="rFactorComboBox4" prefWidth="200.0" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="rErrorLabel4" textFill="RED" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Button fx:id="answerButton4" mnemonicParsing="false" onMouseClicked="#answerButton4MouseClicked" text="Мне повезет" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                     </children>
+                  </GridPane>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Label text="Ответ" />
+                        <GridPane hgap="10.0" vgap="5.0">
+                          <columnConstraints>
+                            <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="200.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Label text="E:" />
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
+                                 <children>
+                                    <TextField fx:id="eTextField4" prefWidth="300.0" />
+                                    <ComboBox fx:id="eFactorComboBox4" prefWidth="200.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
