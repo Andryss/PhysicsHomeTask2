@@ -146,7 +146,10 @@ class SimpleTabBuilder : TabBuilder {
         }
 
         val resetButton = Button("Очистка").apply {
-            onMouseClicked = EventHandler { variablesFields.forEach { it.textField.text = "" } }
+            onMouseClicked = EventHandler {
+                variablesFields.forEach { it.textField.text = "" }
+                variablesFields.forEach { it.label.text = "" }
+            }
         }
 
         val submitButton = Button("Мне повезет").apply {

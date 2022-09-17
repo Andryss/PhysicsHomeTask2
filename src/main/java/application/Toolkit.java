@@ -73,7 +73,7 @@ public class Toolkit {
     }
 
     public static void showUserJoke() {
-        showInfoWindow("Анекдот", JokeGenerator.Companion.getInstance().generate());
+        showInfoWindow("Шутка дня", JokeGenerator.Companion.getInstance().generate());
     }
 
 }

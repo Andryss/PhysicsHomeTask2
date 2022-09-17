@@ -101,5 +101,4 @@ class JokeGeneratorImpl : JokeGenerator {
             ._.
         """.trimIndent()
     )
-
 }
