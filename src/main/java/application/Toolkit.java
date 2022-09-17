@@ -1,16 +1,26 @@
 package application;
 
+import generator.JokeGenerator;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
+import javafx.scene.layout.Region;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.List;
 import java.util.Optional;
 
 public class Toolkit {
+
+    private static final Alert infoWindow = new Alert(Alert.AlertType.INFORMATION);
+    public static void showInfoWindow(String title, String contextText) {
+        infoWindow.setTitle(title);
+        infoWindow.setContentText(contextText);
+        infoWindow.show();
+    }
 
     private static final Alert confirmWindow = new Alert(Alert.AlertType.CONFIRMATION);
     public static Optional<ButtonType> showConfirmWindow(String title, String contextText) {
@@ -35,9 +45,10 @@ public class Toolkit {
     }
 
     static {
-        confirmWindow.setHeaderText(null);
-        warningWindow.setHeaderText(null);
-        errorWindow.setHeaderText(null);
+        for (Alert alert: List.of(infoWindow, confirmWindow, warningWindow, errorWindow)) {
+            alert.setHeaderText(null);
+            alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+        }
     }
 
     private static final DateFormat formatter = new SimpleDateFormat("-yyyy-MM-dd-HH-mm-ss-SSS");
@@ -59,6 +70,10 @@ public class Toolkit {
         } catch (IOException e) {
             // Also, sadness :(
         }
+    }
+
+    public static void showUserJoke() {
+        showInfoWindow("Анекдот", JokeGenerator.Companion.getInstance().generate());
     }
 
 }

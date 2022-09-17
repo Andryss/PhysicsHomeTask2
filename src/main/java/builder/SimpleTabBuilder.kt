@@ -1,9 +1,11 @@
 package builder
 
+import application.Toolkit
 import components.Answer
 import components.Factor
 import components.Problem
 import components.Variable
+import javafx.event.EventHandler
 import javafx.geometry.HPos
 import javafx.geometry.Pos
 import javafx.geometry.VPos
@@ -143,12 +145,26 @@ class SimpleTabBuilder : TabBuilder {
             variablesFields.add(VarField(textField, comboBox, errLabel))
         }
 
-        val submitButton = Button("Мне повезет")
-        submitButton.setOnMouseClicked { submitFun() }
+        val resetButton = Button("Очистка").apply {
+            onMouseClicked = EventHandler { variablesFields.forEach { it.textField.text = "" } }
+        }
+
+        val submitButton = Button("Мне повезет").apply {
+            onMouseClicked = EventHandler { submitFun() }
+        }
+
+        val jokeButton = Button("Мне скучно").apply {
+            onMouseClicked = EventHandler { Toolkit.showUserJoke() }
+        }
+
+        val buttonHBox = HBox(10.0).apply {
+            alignment = Pos.CENTER
+            children.addAll(resetButton, submitButton, jokeButton)
+        }
 
         return VBox(20.0).apply {
             alignment = Pos.CENTER
-            children.addAll(varGridPane, submitButton)
+            children.addAll(varGridPane, buttonHBox)
         }
     }
 
