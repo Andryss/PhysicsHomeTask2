@@ -17,15 +17,12 @@ class SimpleSceneBuilder : SceneBuilder {
                 problems.mapValues {
                     it.value.map { problem -> builder.buildTab(problem) }
                 }.mapValues {
-                    TabPane(*it.value.toTypedArray())
+                    TabPane(*it.value.toTypedArray()).apply { prefWidth = 800.0; prefHeight = 800.0 }
                 }.map {
                     Tab(it.key.toString(), it.value).apply { isClosable = false }
                 }.toTypedArray()
             )
-        ).apply {
-            prefWidth = 800.0
-            prefHeight = 800.0
-        }
+        )
     )
 
 }
