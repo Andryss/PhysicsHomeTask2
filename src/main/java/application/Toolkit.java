@@ -10,7 +10,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
-import java.util.List;
+import java.util.Arrays;
 import java.util.Optional;
 
 public class Toolkit {
@@ -45,7 +45,7 @@ public class Toolkit {
     }
 
     static {
-        for (Alert alert: List.of(infoWindow, confirmWindow, warningWindow, errorWindow)) {
+        for (Alert alert: Arrays.asList(infoWindow, confirmWindow, warningWindow, errorWindow)) {
             alert.setHeaderText(null);
             alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
         }

@@ -12,13 +12,17 @@ public class App extends Application {
     @Override
     public void start(Stage stage) {
 
-        stage.setScene(SceneBuilder.Companion.getInstance().getScene());
+        try {
+            stage.setScene(SceneBuilder.Companion.getInstance().getScene());
 
-        stage.setTitle("Мой дорогой дневник");
-        stage.setResizable(false);
-        loadIcon(stage, "icon.png");
+            stage.setTitle("Мой дорогой дневник");
+            stage.setResizable(false);
+            loadIcon(stage, "icon.png");
 
-        stage.show();
+            stage.show();
+        } catch (Throwable e) {
+            Toolkit.showUserError(e);
+        }
 
     }
 
