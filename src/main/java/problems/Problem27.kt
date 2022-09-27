@@ -8,8 +8,11 @@ import components.factors.Number
 
 @Suppress("unused")
 class Problem27 : Problem {
+    override val id: Int
+        get() = 2
+
     override val label: String
-        get() = "Задача 2.7"
+        get() = "Задача 7"
 
     override val svgPath: String
         get() = "M 100 0 V 200 M 20 100 A 1 1 0 0 0 180 100 A 1 1 0 0 0 20 100 M 100 100 L 51 37 L 54 45 L 58 42 L 51 37 M 46 68 V 54 C 54 54 54 62 46 62 L 52 68 M 115 121 C 122 121 122 107 115 107 C 107 107 107 121 115 121 C 116 124 118 124 120 122"
