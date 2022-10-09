@@ -1,8 +1,10 @@
 package components
 
+import kotlin.math.PI
+
 class Constants {
     companion object {
-        const val k = 9e9
         const val e0 = 8.85e-12
+        const val k = 1 / (4 * PI * e0)
     }
 }
