@@ -1,4 +1,4 @@
-package problems
+package problems.previous.lesson2
 
 import components.Constants.Companion.k
 import components.*

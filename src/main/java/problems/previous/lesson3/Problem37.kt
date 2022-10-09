@@ -1,4 +1,4 @@
-package problems
+package problems.previous.lesson3
 
 import components.*
 import components.factors.ElectricField
