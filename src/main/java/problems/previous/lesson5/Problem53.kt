@@ -1,4 +1,4 @@
-package problems.lesson5
+package problems.previous.lesson5
 
 import components.Answer
 import components.Factor
