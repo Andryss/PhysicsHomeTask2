@@ -4,9 +4,9 @@ import components.Answer
 import components.Factor
 import components.Problem
 import components.Variable
-import components.factors.Capacitance
-import components.factors.Energy
-import components.factors.Voltage
+import components.factors.electromagnetism.Capacitance
+import components.factors.mechanics.Energy
+import components.factors.electromagnetism.Voltage
 
 @Suppress("unused")
 class Problem67 : Problem {

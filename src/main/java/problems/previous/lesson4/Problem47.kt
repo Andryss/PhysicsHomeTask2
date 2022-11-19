@@ -1,9 +1,9 @@
 package problems.previous.lesson4
 
 import components.*
-import components.factors.Charge
-import components.factors.Length
-import components.factors.SpringRate
+import components.factors.electromagnetism.Charge
+import components.factors.mechanics.Length
+import components.factors.mechanics.SpringRate
 import kotlin.math.PI
 import kotlin.math.sqrt
 

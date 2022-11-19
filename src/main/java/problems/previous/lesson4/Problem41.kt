@@ -1,10 +1,10 @@
 package problems.previous.lesson4
 
 import components.*
-import components.factors.Charge
-import components.factors.Length
-import components.factors.Mass
-import components.factors.Velocity
+import components.factors.electromagnetism.Charge
+import components.factors.mechanics.Length
+import components.factors.mechanics.Mass
+import components.factors.mechanics.Velocity
 import kotlin.math.sqrt
 
 @Suppress("unused")

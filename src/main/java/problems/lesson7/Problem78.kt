@@ -4,9 +4,9 @@ import components.Answer
 import components.Factor
 import components.Problem
 import components.Variable
-import components.factors.Charge
-import components.factors.Heat
-import components.factors.Resistance
+import components.factors.electromagnetism.Charge
+import components.factors.mechanics.Heat
+import components.factors.electromagnetism.Resistance
 import components.factors.Time
 import util.MathUtil
 import kotlin.math.abs

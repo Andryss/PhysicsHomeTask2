@@ -1,4 +1,4 @@
-package components.factors
+package components.factors.electromagnetism
 
 import components.Factor
 

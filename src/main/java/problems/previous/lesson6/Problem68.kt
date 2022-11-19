@@ -4,7 +4,7 @@ import components.Answer
 import components.Factor
 import components.Problem
 import components.Variable
-import components.factors.Capacitance
+import components.factors.electromagnetism.Capacitance
 import kotlin.math.sqrt
 
 @Suppress("unused")

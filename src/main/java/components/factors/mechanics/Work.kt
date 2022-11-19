@@ -1,4 +1,4 @@
-package components.factors
+package components.factors.mechanics
 
 import components.Factor
 

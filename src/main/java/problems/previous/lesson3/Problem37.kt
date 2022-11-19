@@ -1,10 +1,10 @@
 package problems.previous.lesson3
 
 import components.*
-import components.factors.ElectricField
-import components.factors.Length
-import components.factors.Potential
-import components.factors.SurfaceChargeDensity
+import components.factors.electromagnetism.ElectricField
+import components.factors.mechanics.Length
+import components.factors.electromagnetism.Potential
+import components.factors.electromagnetism.SurfaceChargeDensity
 import kotlin.math.sqrt
 
 @Suppress("unused")

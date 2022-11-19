@@ -2,8 +2,8 @@ package problems.previous.lesson2
 
 import components.Constants
 import components.*
-import components.factors.Charge
-import components.factors.Length
+import components.factors.electromagnetism.Charge
+import components.factors.mechanics.Length
 import components.factors.Number
 
 @Suppress("unused")
