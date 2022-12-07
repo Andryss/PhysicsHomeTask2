@@ -2,6 +2,9 @@ package components.factors.electromagnetism
 
 import components.Factor
 
+/*
+Диэлектрическая проницаемость среды
+ */
 enum class Permittivity(override val label: String, override val factor: Double) : Factor {
-    FARAD_PER_METER("Ф/м", 1e0);
+    NO_VALUE("единицы", 1e0);
 }
