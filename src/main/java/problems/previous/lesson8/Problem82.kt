@@ -1,4 +1,4 @@
-package problems.lesson8
+package problems.previous.lesson8
 
 import components.*
 import components.factors.electromagnetism.ElectricCurrent
