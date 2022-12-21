@@ -7,5 +7,7 @@ class Constants {
         const val e0 = 8.85e-12
         const val k = 1 / (4 * PI * e0)
         const val mu0 = 4 * PI * 1e-7
+
+        const val copperElectricalResistivity = 1.68 * 10e-8 // Ом * м
     }
 }
