@@ -1,7 +1,7 @@
-package problems.lesson9
+package problems.previous.lesson9
 
 import components.*
-import components.factors.electromagnetism.CurrentDensity
+import components.factors.electromagnetism.complex.CurrentDensity
 import components.factors.electromagnetism.MagneticField
 import components.factors.mechanics.Length
 
