@@ -2,7 +2,12 @@ package generator
 
 class JokeGeneratorImpl : JokeGenerator {
 
-    override fun generate(): String = jokes[(Math.random() * (jokes.size - 1)).toInt()]
+    override fun generate(): String {
+        val joke = jokesTmp.removeLastOrNull()
+        if (joke != null) return joke
+        jokesTmp = shuffleJokes()
+        return jokesTmp.removeLast()
+    }
 
     private val jokes = listOf(
         """
@@ -101,4 +106,12 @@ class JokeGeneratorImpl : JokeGenerator {
             ._.
         """.trimIndent()
     )
+
+    private var jokesTmp = shuffleJokes()
+
+    private fun shuffleJokes() : ArrayDeque<String> {
+        val list = ArrayDeque<String>(jokes.size)
+        list.addAll(jokes.shuffled())
+        return list
+    }
 }
