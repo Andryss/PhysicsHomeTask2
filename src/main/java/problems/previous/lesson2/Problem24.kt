@@ -2,9 +2,9 @@ package problems.previous.lesson2
 
 import components.Constants.Companion.k
 import components.*
-import components.factors.electromagnetism.ElectricField
+import components.factors.electromagnetism.complex.ElectricField
 import components.factors.mechanics.Length
-import components.factors.electromagnetism.LinearChargeDensity
+import components.factors.electromagnetism.complex.LinearChargeDensity
 import kotlin.math.sqrt
 
 @Suppress("unused")

@@ -5,7 +5,7 @@ import components.Factor
 import components.Problem
 import components.Variable
 import components.factors.Angle
-import components.factors.electromagnetism.ElectricField
+import components.factors.electromagnetism.complex.ElectricField
 import components.factors.electromagnetism.Permittivity
 import kotlin.math.cos
 import kotlin.math.sin

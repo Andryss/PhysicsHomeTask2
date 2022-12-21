@@ -2,8 +2,8 @@ package problems.previous.lesson5
 
 import components.*
 import components.factors.electromagnetism.Charge
-import components.factors.electromagnetism.ElectricDisplacementField
-import components.factors.electromagnetism.ElectricField
+import components.factors.electromagnetism.complex.ElectricDisplacementField
+import components.factors.electromagnetism.complex.ElectricField
 import components.factors.electromagnetism.Permittivity
 import components.factors.mechanics.Length
 import kotlin.math.PI

@@ -3,7 +3,7 @@ package problems.previous.lesson4
 import components.*
 import components.factors.electromagnetism.Charge
 import components.factors.mechanics.Length
-import components.factors.mechanics.SpringRate
+import components.factors.mechanics.complex.SpringRate
 import kotlin.math.PI
 import kotlin.math.sqrt
 

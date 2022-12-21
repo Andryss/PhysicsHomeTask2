@@ -4,7 +4,7 @@ import components.*
 import components.factors.electromagnetism.Charge
 import components.factors.mechanics.Length
 import components.factors.mechanics.Mass
-import components.factors.mechanics.Velocity
+import components.factors.mechanics.complex.Velocity
 import kotlin.math.sqrt
 
 @Suppress("unused")
