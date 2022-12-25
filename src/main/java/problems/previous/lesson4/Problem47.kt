@@ -23,23 +23,14 @@ class Problem47 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<SpringRate> {
-                override val label: String
-                    get() = "k"
-                override val factors: List<SpringRate>
-                    get() = SpringRate.values().toList()
-            },
+            SpringRate.simpleVariable,
             Length.Variable("x"),
             Length.Variable("l")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Charge> {
-                override val label: String
-                    get() = "q"
-                override val factors: List<Charge>
-                    get() = Charge.values().toList()
+            object : Charge.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     (4 * vars[2] * sqrt(PI * Constants.e0 * vars[0] * vars[1]))
             }

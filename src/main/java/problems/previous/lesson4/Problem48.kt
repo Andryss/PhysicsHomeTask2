@@ -21,12 +21,7 @@ class Problem48 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Charge> {
-                override val label: String
-                    get() = "q"
-                override val factors: List<Charge>
-                    get() = Charge.values().toList()
-            },
+            Charge.simpleVariable,
             Length.Variable("l")
         )
 

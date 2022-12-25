@@ -23,6 +23,6 @@ enum class Time(override val label: String, override val factor: Double) : Facto
     }
 
     companion object {
-        val simpleVariable = object : Variable() {}
+        val simpleVariable = Variable()
     }
 }

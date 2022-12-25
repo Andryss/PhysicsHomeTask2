@@ -24,40 +24,22 @@ class Problem52 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Charge> {
-                override val label: String
-                    get() = "q"
-                override val factors: List<Charge>
-                    get() = Charge.values().toList()
-            },
+            Charge.simpleVariable,
             Length.Variable("R"),
-            object : Variable<Permittivity> {
-                override val label: String
-                    get() = "ε"
-                override val factors: List<Permittivity>
-                    get() = Permittivity.values().toList()
-            },
+            Permittivity.simpleVariable,
             Length.Variable("r")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<ElectricField> {
-                override val label: String
-                    get() = "E"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
+            object : ElectricField.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     if (vars[3] <= vars[1])
                         ((Constants.k * vars[0]) / (vars[3] * vars[3] * vars[2]))
                     else
                         ((Constants.k * vars[0]) / (vars[3] * vars[3]))
             },
-            object : Answer<ElectricDisplacementField> {
-                override val label: String
-                    get() = "D"
-                override val factors: List<ElectricDisplacementField>
-                    get() = ElectricDisplacementField.values().toList()
+            object : ElectricDisplacementField.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     (vars[0] / (4 * PI * vars[3] * vars[3]))
             }

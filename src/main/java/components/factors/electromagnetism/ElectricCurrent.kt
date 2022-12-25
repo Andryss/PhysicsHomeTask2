@@ -1,8 +1,6 @@
 package components.factors.electromagnetism
 
 import components.Factor
-import components.Variable
-import components.factors.electromagnetism.complex.ElectricField
 
 /*
 Сила тока
@@ -10,12 +8,20 @@ import components.factors.electromagnetism.complex.ElectricField
 enum class ElectricCurrent(override val label: String, override val factor: Double) : Factor {
     AMPERE("А", 1e0);
 
+    open class Variable : components.Variable<ElectricCurrent> {
+        constructor() { label = "I" }
+        constructor(l: String) { label = l }
+
+        final override val label: String
+        final override val factors = ElectricCurrent.values().toList()
+    }
+
+    abstract class Answer : Variable, components.Answer<ElectricCurrent> {
+        constructor() : super()
+        constructor(l: String) : super(l)
+    }
+
     companion object {
-        val simpleImpl : Variable<ElectricField> = object : Variable<ElectricField> {
-            override val label: String
-                get() = "I"
-            override val factors: List<ElectricField>
-                get() = ElectricField.values().toList()
-        }
+        val simpleVariable = Variable()
     }
 }

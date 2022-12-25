@@ -27,28 +27,14 @@ class Problem53 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Permittivity> {
-                override val label: String
-                    get() = "ε"
-                override val factors: List<Permittivity>
-                    get() = Permittivity.values().toList()
-            },
+            Permittivity.simpleVariable,
             Angle.simpleVariable,
-            object : Variable<ElectricField> {
-                override val label: String
-                    get() = "E₀"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
-            }
+            ElectricField.Variable("E₀")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<ElectricField> {
-                override val label: String
-                    get() = "E"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
+            object : ElectricField.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     (vars[2] / vars[0] * sqrt(cos(vars[1]) * cos(vars[1]) + vars[0] * vars[0] * sin(vars[1]) * sin(vars[1])))
             }

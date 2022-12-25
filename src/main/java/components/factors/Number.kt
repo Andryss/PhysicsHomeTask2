@@ -22,6 +22,6 @@ enum class Number(override val factor: Double, override val label: String) : Fac
     }
 
     companion object {
-        val simpleVariable = object : Variable() {}
+        val simpleVariable = Variable()
     }
 }

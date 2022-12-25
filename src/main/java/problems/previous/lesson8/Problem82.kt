@@ -30,21 +30,12 @@ class Problem82 : Problem {
             },
             Length.Variable("R"),
             Length.Variable("x"),
-            object : Variable<Permeability> {
-                override val label: String
-                    get() = "μ"
-                override val factors: List<Permeability>
-                    get() = Permeability.values().toList()
-            }
+            Permeability.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<MagneticField> {
-                override val label: String
-                    get() = "B"
-                override val factors: List<MagneticField>
-                    get() = MagneticField.values().toList()
+            object : MagneticField.Answer() {
                 override fun calculate(vars: List<Double>): Double {
                     val I = vars[0]
                     val R = vars[1].coerceAtLeast(1e-10)

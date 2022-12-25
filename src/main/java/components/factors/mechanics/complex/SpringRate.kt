@@ -23,6 +23,6 @@ enum class SpringRate(override val label: String, override val factor: Double) :
     }
 
     companion object {
-        val simpleVariable = object : Variable() {}
+        val simpleVariable = Variable()
     }
 }

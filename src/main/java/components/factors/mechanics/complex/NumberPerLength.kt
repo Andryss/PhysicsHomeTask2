@@ -23,6 +23,6 @@ enum class NumberPerLength(override val label: String, override val factor: Doub
     }
 
     companion object {
-        val simpleVariable = object : Variable() {}
+        val simpleVariable = Variable()
     }
 }

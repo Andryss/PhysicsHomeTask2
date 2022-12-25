@@ -23,22 +23,13 @@ class Problem24 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<LinearChargeDensity> {
-                override val label: String
-                    get() = "λ"
-                override val factors: List<LinearChargeDensity>
-                    get() = LinearChargeDensity.values().toList()
-            },
+            LinearChargeDensity.simpleVariable,
             Length.Variable("R")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<ElectricField> {
-                override val label: String
-                    get() = "E"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
+            object : ElectricField.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     ((sqrt(2.0) * k * vars[0]) / vars[1])
             }

@@ -21,31 +21,18 @@ class Problem43 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Charge> {
-                override val label: String
-                    get() = "q"
-                override val factors: List<Charge>
-                    get() = Charge.values().toList()
-            },
+            Charge.simpleVariable,
             Length.Variable("R"),
             Length.Variable("б) r")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Potential> {
-                override val label: String
-                    get() = "а) φ"
-                override val factors: List<Potential>
-                    get() = Potential.values().toList()
+            object : Potential.Answer("а) φ") {
                 override fun calculate(vars: List<Double>): Double =
                     ((3 * Constants.k * vars[0]) / (2 * vars[1]))
             },
-            object : Answer<Potential> {
-                override val label: String
-                    get() = "б) φ"
-                override val factors: List<Potential>
-                    get() = Potential.values().toList()
+            object : Potential.Answer("б) φ") {
                 override fun calculate(vars: List<Double>): Double =
                     (((3 * Constants.k * vars[0]) / (2 * vars[1])) * (1 - (vars[2] * vars[2]) / (3 * vars[1] * vars[1])))
             }

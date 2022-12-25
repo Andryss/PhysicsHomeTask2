@@ -22,22 +22,13 @@ class Problem92 : Problem {
     override val variables: List<Variable<Factor>>
         get() = listOf(
             Length.Variable("R"),
-            object : Variable<CurrentDensity> {
-                override val label: String
-                    get() = "j"
-                override val factors: List<CurrentDensity>
-                    get() = CurrentDensity.values().toList()
-            },
+            CurrentDensity.simpleVariable,
             Length.Variable("r")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<MagneticField> {
-                override val label: String
-                    get() = "B"
-                override val factors: List<MagneticField>
-                    get() = MagneticField.values().toList()
+            object : MagneticField.Answer() {
                 override fun calculate(vars: List<Double>): Double {
                     val R = vars[0]
                     val j = vars[1]

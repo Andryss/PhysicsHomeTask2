@@ -23,28 +23,14 @@ class Problem85 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<ElectricCurrent> {
-                override val label: String
-                    get() = "I"
-                override val factors: List<ElectricCurrent>
-                    get() = ElectricCurrent.values().toList()
-            },
+            ElectricCurrent.simpleVariable,
             Length.Variable("R"),
-            object : Variable<Permeability> {
-                override val label: String
-                    get() = "μ"
-                override val factors: List<Permeability>
-                    get() = Permeability.values().toList()
-            }
+            Permeability.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<MagneticField> {
-                override val label: String
-                    get() = "B"
-                override val factors: List<MagneticField>
-                    get() = MagneticField.values().toList()
+            object : MagneticField.Answer() {
                 override fun calculate(vars: List<Double>): Double {
                     val I = vars[0]
                     val R = vars[1].coerceAtLeast(1e-10)

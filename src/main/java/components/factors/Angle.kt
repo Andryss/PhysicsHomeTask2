@@ -24,6 +24,6 @@ enum class Angle(override val label: String, override val factor: Double) : Fact
     }
 
     companion object {
-        val simpleVariable = object : Variable() {}
+        val simpleVariable = Variable()
     }
 }

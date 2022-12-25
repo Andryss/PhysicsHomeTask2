@@ -24,34 +24,14 @@ class Problem104 : Problem {
     override val variables: List<Variable<Factor>>
         get() = listOf(
             Length.Variable("d"),
-            object : Variable<NumberPerLength> {
-                override val label: String
-                    get() = "N"
-                override val factors: List<NumberPerLength>
-                    get() = NumberPerLength.values().toList()
-            },
-            object : Variable<Area> {
-                override val label: String
-                    get() = "S"
-                override val factors: List<Area>
-                    get() = Area.values().toList()
-            },
-            object : Variable<ElectricCurrentPerTime> {
-                override val label: String
-                    get() = "ΔI"
-                override val factors: List<ElectricCurrentPerTime>
-                    get() = ElectricCurrentPerTime.values().toList()
-            }
+            NumberPerLength.simpleVariable,
+            Area.simpleVariable,
+            ElectricCurrentPerTime.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<ElectricCurrent> {
-                override val label: String
-                    get() = "I"
-                override val factors: List<ElectricCurrent>
-                    get() = ElectricCurrent.values().toList()
-
+            object : ElectricCurrent.Answer() {
                 override fun calculate(vars: List<Double>): Double {
                     val d = vars[0]
                     val N = vars[1]

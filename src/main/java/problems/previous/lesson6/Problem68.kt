@@ -23,21 +23,12 @@ class Problem68 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Capacitance> {
-                override val label: String
-                    get() = "C"
-                override val factors: List<Capacitance>
-                    get() = Capacitance.values().toList()
-            }
+            Capacitance.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Capacitance> {
-                override val label: String
-                    get() = "C"
-                override val factors: List<Capacitance>
-                    get() = Capacitance.values().toList()
+            object : Capacitance.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     (vars[0] * (sqrt(5.0) - 1) / 2)
             }

@@ -22,6 +22,6 @@ enum class Energy(override val label: String, override val factor: Double) : Fac
     }
 
     companion object {
-        val simpleVariable = object : Variable() {}
+        val simpleVariable = Variable()
     }
 }

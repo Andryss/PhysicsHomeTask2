@@ -24,62 +24,33 @@ class Problem37 : Problem {
     override val variables: List<Variable<Factor>>
         get() = listOf(
             Length.Variable("R"),
-            object : Variable<SurfaceChargeDensity> {
-                override val label: String
-                    get() = "σ"
-                override val factors: List<SurfaceChargeDensity>
-                    get() = SurfaceChargeDensity.values().toList()
-            },
+            SurfaceChargeDensity.simpleVariable,
             Length.Variable("l")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<ElectricField> {
-                override val label: String
-                    get() = "E"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
+            object : ElectricField.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     ((vars[1] / (2 * Constants.e0)) * (1 - 1 / sqrt(1 + (vars[0] / vars[2]) * (vars[0] / vars[2]))))
             },
-            object : Answer<ElectricField> {
-                override val label: String
-                    get() = "E (l → 0)"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
+            object : ElectricField.Answer("E (l → 0)") {
                 override fun calculate(vars: List<Double>): Double =
                     (vars[1] / (2 * Constants.e0))
             },
-            object : Answer<ElectricField> {
-                override val label: String
-                    get() = "E (l >> R)"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
+            object : ElectricField.Answer("E (l >> R)") {
                 override fun calculate(vars: List<Double>): Double =
                     (0.0)
             },
-            object : Answer<Potential> {
-                override val label: String
-                    get() = "φ"
-                override val factors: List<Potential>
-                    get() = Potential.values().toList()
+            object : Potential.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     (((vars[1] * vars[2]) / (2 * Constants.e0)) * (sqrt(1 + (vars[0] / vars[2]) * (vars[0] / vars[2])) - 1))
             },
-            object : Answer<Potential> {
-                override val label: String
-                    get() = "φ (l → 0)"
-                override val factors: List<Potential>
-                    get() = Potential.values().toList()
+            object : Potential.Answer("φ (l → 0)") {
                 override fun calculate(vars: List<Double>): Double =
                     (((vars[1] * vars[0]) / (2 * Constants.e0)))
             },
-            object : Answer<Potential> {
-                override val label: String
-                    get() = "φ (l >> R)"
-                override val factors: List<Potential>
-                    get() = Potential.values().toList()
+            object : Potential.Answer("φ (l >> R)") {
                 override fun calculate(vars: List<Double>): Double =
                     (0.0)
             }

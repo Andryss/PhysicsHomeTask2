@@ -24,24 +24,9 @@ class Problem67 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Capacitance> {
-                override val label: String
-                    get() = "C₁"
-                override val factors: List<Capacitance>
-                    get() = Capacitance.values().toList()
-            },
-            object : Variable<Voltage> {
-                override val label: String
-                    get() = "U"
-                override val factors: List<Voltage>
-                    get() = Voltage.values().toList()
-            },
-            object : Variable<Capacitance> {
-                override val label: String
-                    get() = "C₂"
-                override val factors: List<Capacitance>
-                    get() = Capacitance.values().toList()
-            }
+            Capacitance.Variable("C₁"),
+            Voltage.simpleVariable,
+            Capacitance.Variable("C₂")
         )
 
     override val answers: List<Answer<Factor>>

@@ -26,30 +26,15 @@ class Problem101 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<MagneticFieldPerTime> {
-                override val label: String
-                    get() = "ΔB"
-                override val factors: List<MagneticFieldPerTime>
-                    get() = MagneticFieldPerTime.values().toList()
-            },
-            object : Variable<Acceleration> {
-                override val label: String
-                    get() = "a"
-                override val factors: List<Acceleration>
-                    get() = Acceleration.values().toList()
-            },
+            MagneticFieldPerTime.simpleVariable,
+            Acceleration.simpleVariable,
             Length.Variable("l"),
             Time.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<ElectromotiveForce> {
-                override val label: String
-                    get() = "ε"
-                override val factors: List<ElectromotiveForce>
-                    get() = ElectromotiveForce.values().toList()
-
+            object : ElectromotiveForce.Answer() {
                 override fun calculate(vars: List<Double>): Double {
                     val dB = vars[0]
                     val a = vars[1]

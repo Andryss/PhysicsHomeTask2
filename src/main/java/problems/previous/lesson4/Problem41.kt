@@ -24,22 +24,13 @@ class Problem41 : Problem {
     override val variables: List<Variable<Factor>>
         get() = listOf(
             Length.Variable("l"),
-            object : Variable<Charge> {
-                override val label: String
-                    get() = "q"
-                override val factors: List<Charge>
-                    get() = Charge.values().toList()
-            },
+            Charge.Variable(),
             Mass.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Velocity> {
-                override val label: String
-                    get() = "v"
-                override val factors: List<Velocity>
-                    get() = Velocity.values().toList()
+            object : Velocity.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     (sqrt((8 * Constants.k * vars[1] * vars[1]) / (vars[0] * vars[2])))
             }

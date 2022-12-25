@@ -27,18 +27,8 @@ class Problem78 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Resistance> {
-                override val label: String
-                    get() = "R"
-                override val factors: List<Resistance>
-                    get() = Resistance.values().toList()
-            },
-            object : Variable<Charge> {
-                override val label: String
-                    get() = "q"
-                override val factors: List<Charge>
-                    get() = Charge.values().toList()
-            },
+            Resistance.simpleVariable,
+            Charge.simpleVariable,
             Time.simpleVariable
         )
 

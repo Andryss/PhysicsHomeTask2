@@ -24,36 +24,18 @@ class Problem64 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Permittivity> {
-                override val label: String
-                    get() = "ε"
-                override val factors: List<Permittivity>
-                    get() = Permittivity.values().toList()
-            },
-            object : Variable<ElectricField> {
-                override val label: String
-                    get() = "E"
-                override val factors: List<ElectricField>
-                    get() = ElectricField.values().toList()
-            },
+            Permittivity.simpleVariable,
+            ElectricField.simpleVariable,
             Length.Variable("R")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<SurfaceChargeDensity> {
-                override val label: String
-                    get() = "σ'макс"
-                override val factors: List<SurfaceChargeDensity>
-                    get() = SurfaceChargeDensity.values().toList()
+            object : SurfaceChargeDensity.Answer("σ'макс") {
                 override fun calculate(vars: List<Double>): Double =
                     ((vars[0] - 1) * Constants.e0 * vars[1])
             },
-            object : Answer<Charge> {
-                override val label: String
-                    get() = "q"
-                override val factors: List<Charge>
-                    get() = Charge.values().toList()
+            object : Charge.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     ((vars[0] - 1) * Constants.e0 * vars[1] * vars[2] * vars[2] * PI)
             }

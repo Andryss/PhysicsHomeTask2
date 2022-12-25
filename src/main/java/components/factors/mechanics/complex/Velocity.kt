@@ -22,6 +22,6 @@ enum class Velocity(override val label: String, override val factor: Double) : F
     }
 
     companion object {
-        val simpleVariable = object : Variable() {}
+        val simpleVariable = Variable()
     }
 }
