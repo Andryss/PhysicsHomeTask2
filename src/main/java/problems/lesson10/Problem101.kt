@@ -38,18 +38,8 @@ class Problem101 : Problem {
                 override val factors: List<Acceleration>
                     get() = Acceleration.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "l"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            },
-            object : Variable<Time> {
-                override val label: String
-                    get() = "t"
-                override val factors: List<Time>
-                    get() = Time.values().toList()
-            }
+            Length.Variable("l"),
+            Time.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>

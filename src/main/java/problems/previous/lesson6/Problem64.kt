@@ -36,12 +36,7 @@ class Problem64 : Problem {
                 override val factors: List<ElectricField>
                     get() = ElectricField.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "R"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            }
+            Length.Variable("R")
         )
 
     override val answers: List<Answer<Factor>>

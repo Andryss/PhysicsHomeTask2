@@ -23,12 +23,7 @@ class Problem104 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Length> {
-                override val label: String
-                    get() = "d"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            },
+            Length.Variable("d"),
             object : Variable<NumberPerLength> {
                 override val label: String
                     get() = "N"

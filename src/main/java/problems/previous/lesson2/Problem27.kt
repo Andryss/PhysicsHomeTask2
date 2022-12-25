@@ -22,19 +22,8 @@ class Problem27 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Length> {
-                override val label: String
-                    get() = "R"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            },
-            object : Variable<Number> {
-                override val label: String
-                    get() = "a"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
-
-            }
+            Length.Variable("R"),
+            Number.Variable("a")
         )
 
     override val answers: List<Answer<Factor>>

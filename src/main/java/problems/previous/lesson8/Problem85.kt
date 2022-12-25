@@ -29,12 +29,7 @@ class Problem85 : Problem {
                 override val factors: List<ElectricCurrent>
                     get() = ElectricCurrent.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "R"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            },
+            Length.Variable("R"),
             object : Variable<Permeability> {
                 override val label: String
                     get() = "μ"

@@ -27,18 +27,8 @@ class Problem43 : Problem {
                 override val factors: List<Charge>
                     get() = Charge.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "R"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "б) r"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            }
+            Length.Variable("R"),
+            Length.Variable("б) r")
         )
 
     override val answers: List<Answer<Factor>>

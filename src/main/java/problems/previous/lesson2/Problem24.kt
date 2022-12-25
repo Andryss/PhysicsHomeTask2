@@ -29,12 +29,7 @@ class Problem24 : Problem {
                 override val factors: List<LinearChargeDensity>
                     get() = LinearChargeDensity.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "R"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            }
+            Length.Variable("R")
         )
 
     override val answers: List<Answer<Factor>>

@@ -46,11 +46,7 @@ class Problem67 : Problem {
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Energy> {
-                override val label: String
-                    get() = "W"
-                override val factors: List<Energy>
-                    get() = Energy.values().toList()
+            object : Energy.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     ((vars[1] * vars[1] * vars[0]) / 2 * (vars[0] / (vars[0] + vars[2]) - 1))
             }

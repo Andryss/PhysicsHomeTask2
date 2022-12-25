@@ -29,18 +29,8 @@ class Problem47 : Problem {
                 override val factors: List<SpringRate>
                     get() = SpringRate.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "x"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "l"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            }
+            Length.Variable("x"),
+            Length.Variable("l")
         )
 
     override val answers: List<Answer<Factor>>

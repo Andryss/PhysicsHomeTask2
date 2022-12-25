@@ -27,12 +27,7 @@ class Problem95 : Problem {
                 override val factors: List<CurrentDensity>
                     get() = CurrentDensity.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "l"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            }
+            Length.Variable("l")
         )
 
     override val answers: List<Answer<Factor>>

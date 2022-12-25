@@ -27,21 +27,12 @@ class Problem48 : Problem {
                 override val factors: List<Charge>
                     get() = Charge.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "l"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            }
+            Length.Variable("l")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Work> {
-                override val label: String
-                    get() = "A"
-                override val factors: List<Work>
-                    get() = Work.values().toList()
+            object : Work.Answer() {
                 override fun calculate(vars: List<Double>): Double =
                     ((Constants.k * vars[0] * vars[0]) / (4 * vars[1]))
             }

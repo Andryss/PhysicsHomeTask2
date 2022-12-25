@@ -21,24 +21,14 @@ class Problem92 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Length> {
-                override val label: String
-                    get() = "R"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            },
+            Length.Variable("R"),
             object : Variable<CurrentDensity> {
                 override val label: String
                     get() = "j"
                 override val factors: List<CurrentDensity>
                     get() = CurrentDensity.values().toList()
             },
-            object : Variable<Length> {
-                override val label: String
-                    get() = "r"
-                override val factors: List<Length>
-                    get() = Length.values().toList()
-            }
+            Length.Variable("r")
         )
 
     override val answers: List<Answer<Factor>>

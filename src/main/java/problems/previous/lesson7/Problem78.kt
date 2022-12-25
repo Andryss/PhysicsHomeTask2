@@ -39,21 +39,12 @@ class Problem78 : Problem {
                 override val factors: List<Charge>
                     get() = Charge.values().toList()
             },
-            object : Variable<Time> {
-                override val label: String
-                    get() = "t"
-                override val factors: List<Time>
-                    get() = Time.values().toList()
-            }
+            Time.simpleVariable
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Heat> {
-                override val label: String
-                    get() = "Q"
-                override val factors: List<Heat>
-                    get() = Heat.values().toList()
+            object : Heat.Answer() {
                 override fun calculate(vars: List<Double>): Double {
                     val R = vars[0]
                     val q = vars[1]

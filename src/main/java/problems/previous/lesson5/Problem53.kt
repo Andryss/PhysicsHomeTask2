@@ -33,12 +33,7 @@ class Problem53 : Problem {
                 override val factors: List<Permittivity>
                     get() = Permittivity.values().toList()
             },
-            object : Variable<Angle> {
-                override val label: String
-                    get() = "α"
-                override val factors: List<Angle>
-                    get() = Angle.values().toList()
-            },
+            Angle.simpleVariable,
             object : Variable<ElectricField> {
                 override val label: String
                     get() = "E₀"

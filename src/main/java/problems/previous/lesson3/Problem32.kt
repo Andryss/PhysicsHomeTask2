@@ -19,57 +19,26 @@ class Problem32 : Problem {
 
     override val variables: List<Variable<Factor>>
         get() = listOf(
-            object : Variable<Number> {
-                override val label: String
-                    get() = "a"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
-            },
-            object : Variable<Number> {
-                override val label: String
-                    get() = "x"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
-            },
-            object : Variable<Number> {
-                override val label: String
-                    get() = "y"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
-            }
+            Number.Variable("a"),
+            Number.Variable("x"),
+            Number.Variable("y")
         )
 
     override val answers: List<Answer<Factor>>
         get() = listOf(
-            object : Answer<Number> {
-                override val label: String
-                    get() = "а) Ex"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
+            object : Number.Answer("а) Ex") {
                 override fun calculate(vars: List<Double>): Double =
                     (-2 * vars[0] * vars[1])
             },
-            object : Answer<Number> {
-                override val label: String
-                    get() = "а) Ey"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
+            object : Number.Answer("а) Ey") {
                 override fun calculate(vars: List<Double>): Double =
                     (2 * vars[0] * vars[2])
             },
-            object : Answer<Number> {
-                override val label: String
-                    get() = "б) Ex"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
+            object : Number.Answer("б) Ex") {
                 override fun calculate(vars: List<Double>): Double =
                     (- vars[0] * vars[2])
             },
-            object : Answer<Number> {
-                override val label: String
-                    get() = "б) Ey"
-                override val factors: List<Number>
-                    get() = Number.values().toList()
+            object : Number.Answer("б) Ey") {
                 override fun calculate(vars: List<Double>): Double =
                     (- vars[0] * vars[1])
             }
