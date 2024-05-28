@@ -32,7 +32,7 @@ class ProblemHolder {
                 .filter { it.interfaces.contains(Problem::class.java) }
                 .map { it.getConstructor().newInstance() as Problem }
                 .collect(Collectors.toMap({ it.id }, { mutableListOf(it) }, { list1, list2 -> list1.addAll(list2); list1 }))
-                .toSortedMap(Comparator(Int::compareTo).reversed())
+                .toSortedMap(Comparator.naturalOrder<Int>().reversed())
     }
 
 }

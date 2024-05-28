@@ -1,4 +1,4 @@
-package problems.previous.lesson3
+package problems.lesson3
 
 import components.*
 import components.factors.Number

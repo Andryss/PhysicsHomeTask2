@@ -1,4 +1,4 @@
-package problems.previous.lesson9
+package problems.lesson9
 
 import components.*
 import components.factors.electromagnetism.complex.CurrentDensity

@@ -1,4 +1,4 @@
-package problems.previous.lesson4
+package problems.lesson4
 
 import components.*
 import components.factors.electromagnetism.Charge
